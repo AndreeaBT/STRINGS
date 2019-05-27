@@ -14,12 +14,9 @@ namespace STRINGS
             UpperAndLowerInput();
             ReverseMultipleOfFourString();
             ReverseString();
-            GetStringFromUser();
+            
         }
-        public static void GetStringFromUser()
-        {
-           
-        }
+      
         
         static void RemoveAnIndex()
         {
@@ -31,7 +28,22 @@ namespace STRINGS
         }
         public static void RemoveOddIndexValue()
         {
-           
+            
+            string  myFirst ="This is a string to get used to string manipulation!";
+            string mySecond = "";
+            char[] Third = myFirst.ToArray();
+            for (int i = 0; i < Third.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    mySecond += Third[i].ToString();
+                }
+                
+            }
+            Console.WriteLine(mySecond);
+
+
+
         }
         public static void UpperAndLowerInput()
         {
