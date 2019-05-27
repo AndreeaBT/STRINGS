@@ -59,7 +59,7 @@ namespace STRINGS
 
         public static void ReverseMultipleOfFourString()
         {
-            string myFirst = "This ";
+            string myFirst = "This";
             string mySecond = "";
             char[] Third = myFirst.ToArray();
             
