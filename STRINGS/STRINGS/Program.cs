@@ -79,6 +79,13 @@ namespace STRINGS
 
 
 
+        public static void UpperCaseInTheFirstTwo()
+        {
+            
+        }
+
+
+
         public static void ReverseString()
         {
             var myString = "This is a phrase to get used to string manipulation!";
@@ -86,5 +93,5 @@ namespace STRINGS
 
         }
 
-   }
+    }
 }
