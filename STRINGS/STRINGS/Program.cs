@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using static System.Net.WebRequestMethods;
 
 namespace STRINGS
@@ -9,21 +10,32 @@ namespace STRINGS
         static void Main(string[] args)
         {
 
+
+
+
+           
+
             RemoveAnIndex();
             RemoveOddIndexValue();
             UpperAndLowerInput();
-            ReverseMultipleOfFourString();
+            ReverseStringIfMultipleOfFour();
             ReverseString();
-            
+            UpperCaseInTheFirstTwoCharacters();
+            CheckIfStringIsPalindrome();
+
+
         }
 
+       
+
+        
 
         static void RemoveAnIndex()
         {
 
-            var myString = "This is a phrase to get used to string manipulation!";
-
-            Console.WriteLine(myString.Remove(5, 12));
+            string myString ="This is a phrase to get used to string manipulation!";
+            
+            Console.WriteLine(myString.Remove(4, 1));
         }
 
 
@@ -36,7 +48,7 @@ namespace STRINGS
             char[] Third = myFirst.ToArray();
             for (int i = 0; i < Third.Length; i++)
             {
-                if (i % 2 == 1)
+                if (i % 2 == 0)
                 {
                     mySecond += Third[i].ToString();
                 }
@@ -49,7 +61,7 @@ namespace STRINGS
 
         public static void UpperAndLowerInput()
         {
-            var myString = "This is a phrase to get used to string manipulation!";
+            string myString ="This is a phrase to get used to string manipulation!";
             Console.WriteLine(myString.ToLower());
 
             Console.WriteLine(myString.ToUpper());
@@ -57,9 +69,10 @@ namespace STRINGS
 
 
 
-        public static void ReverseMultipleOfFourString()
+        public static void ReverseStringIfMultipleOfFour()
         {
-            string myFirst = "This";
+            Console.WriteLine("Please type something for the ReverseStringIfMultipleOfFour method!");
+            string myFirst = Console.ReadLine();
             string mySecond = "";
             char[] Third = myFirst.ToArray();
             
@@ -71,7 +84,8 @@ namespace STRINGS
                 }
                 else 
                 {
-                    Console.WriteLine($"The length of this string is not a mutiple of 4!");
+                    Console.WriteLine($"The length of \" {myFirst}\" is not a mutiple of 4!");
+                    return;
                 }
             }
             Console.WriteLine(new string(mySecond.Reverse().ToArray()));
@@ -79,9 +93,27 @@ namespace STRINGS
 
 
 
-        public static void UpperCaseInTheFirstTwo()
+        public static void UpperCaseInTheFirstTwoCharacters()
         {
-            
+            Console.WriteLine("Please type something for the \" UpperCaseInTheFirstTwoCharacters method!\"");
+            string Line = Console.ReadLine();
+            for (int i = 0; i < Line.Length; i++)
+            {
+                string New = "";
+                if (char.IsUpper(Line[0]) && char.IsUpper(Line[1]))
+                {
+                    New = New + Line.ToUpper().ToString();
+                   
+                }
+                
+                else
+                {
+                    Console.WriteLine($"The string \" {Line}\" doesn't have the first two characters written in uppercase!");
+                    return;
+                }
+                //Console.WriteLine(New);
+                Console.WriteLine($"The string \" {New}\" has the first two characters written in uppercase!");
+            }
         }
 
 
@@ -90,8 +122,31 @@ namespace STRINGS
         {
             var myString = "This is a phrase to get used to string manipulation!";
             Console.WriteLine(new string(myString.Reverse().ToArray()));
-
+           
         }
 
+        public static void CheckIfStringIsPalindrome()
+        {
+            Console.WriteLine("Please type something for the ChechIfStringIsPalindrome method!");
+            string Line = Console.ReadLine();
+            Console.WriteLine(Line);
+            int l = 0;
+            int h = Line.Length - 1;
+            while (h > l)
+            {
+                if (Line[l++] != Line[h--])
+                {
+                    Console.WriteLine($"{Line} is Not Palindrome");
+                    return;
+                }
+            }
+            Console.WriteLine($"{Line} is palindrome");
+        }
+
+
+
     }
+
+
+    
 }
